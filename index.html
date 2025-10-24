@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Analysis Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .section-header {
+            border-left: 6px solid #4f46e5;
+            padding-left: 1rem;
+            font-weight: 800;
+            color: #1f2937;
+        }
+        .card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .arrow-link {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Responsive Flow Lines - Complex CSS, usually done with SVG or position:absolute */
+        .connector {
+            position: absolute;
+            width: 4px;
+            background-color: #3b82f6;
+            z-index: 10;
+        }
+        .connector-h {
+            position: absolute;
+            height: 4px;
+            background-color: #3b82f6;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <!-- HEADER -->
+        <header class="text-center mb-12 bg-white p-6 rounded-xl shadow-lg">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-indigo-700 mb-2">
+                Policy Effectiveness Analysis Flow
+            </h1>
+            <p class="text-lg text-gray-600 font-semibold">
+                Quantitatively analyze the effectiveness of platform policy changes (Bans, Content Moderation Updates) on hate speech prevalence on social media platforms.
+            </p>
+        </header>
+
+        <main class="relative">
+            <!-- Learning Section -->
+            <section class="mb-16">
+                <h2 class="section-header text-2xl mb-8">I. Learnings from Reading & Discussion</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <!-- Learning A -->
+                    <div id="learning-a" class="card bg-yellow-100 p-6 rounded-xl border-l-8 border-yellow-500 relative">
+                        <div class="absolute top-2 right-2 text-yellow-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shuffle"><path d="M21 4H8"/><path d="M21 20H8"/><path d="m5 9 3 3-3 3"/><path d="M18 4h3"/><path d="M18 20h3"/><path d="m11 4 3 3-3 3"/><path d="m11 20 3-3-3-3"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-yellow-800">A. The "Displacement Effect"</h3>
+                        <p class="text-sm text-yellow-700">
+                            <strong><u>Insight:</u></strong> Banning toxicity merely shifts the problem. Users migrate to less-moderated platforms or create new accounts, meaning platform-specific bans do not solve the root issue.
+                        </p>
+                        <span class="block mt-3 text-xs font-mono text-yellow-600">Source: Reddit 2015 Ban (R/FPH, R/CoonTown)</span>
+                    </div>
+
+                    <!-- Learning D -->
+                    <div id="learning-d" class="card bg-purple-100 p-6 rounded-xl border-l-8 border-purple-500 relative">
+                        <div class="absolute top-2 right-2 text-purple-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gavel"><path d="m15 12-8.5 8.5"/><path d="m14 11 1.5 1.5"/><path d="M21 6v6"/><path d="M16 12v6"/><path d="M8 20l-3-3h11.5"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-purple-800">D. Policy Rationale Varies by Platform</h3>
+                        <p class="text-sm text-purple-700">
+                            <strong><u>Insight:</u></strong> The business model (ad-driven vs. user-driven) and corporate priorities fundamentally shape the nature, scope, and enforcement of moderation policies.
+                        </p>
+                        <span class="block mt-3 text-xs font-mono text-purple-600">Source: Discussion on Reddit vs. Instagram/X</span>
+                    </div>
+
+                    <!-- Learning C -->
+                    <div id="learning-c" class="card bg-red-100 p-6 rounded-xl border-l-8 border-red-500 relative">
+                        <div class="absolute top-2 right-2 text-red-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bug"><path d="M19 14v4"/><path d="M12 21a2 2 0 0 1-2-2v-6"/><path d="M14 19a2 2 0 0 0 2-2v-6"/><path d="M8 17a2 2 0 0 1-2-2v-6"/><path d="M10 15a2 2 0 0 0-2-2v-6"/><path d="M5 10V4"/><path d="M19 10V4"/><path d="M12 2v2"/><path d="M20 18H4"/><path d="M12 18V4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-red-800">C. Limitations of Text Analysis</h3>
+                        <p class="text-sm text-red-700">
+                            <strong><u>Insight:</u></strong> Simple keyword-based tools (lexicons) fail to capture implicit hate speech, sarcasm, or "dog-whistles," severely underestimating the real volume of toxic content.
+                        </p>
+                        <span class="block mt-3 text-xs font-mono text-red-600">Source: Use of Lexicons and Keywords</span>
+                    </div>
+
+                    <!-- Learning B -->
+                    <div id="learning-b" class="card bg-blue-100 p-6 rounded-xl border-l-8 border-blue-500 relative">
+                        <div class="absolute top-2 right-2 text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-3"><path d="M3 3v18h18"/><path d="M18 10V5"/><path d="M12 18V5"/><path d="M6 15v-6"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-blue-800">B. Policy Impact Measurement is Complex</h3>
+                        <p class="text-sm text-blue-700">
+                            <strong><u>Insight:</u></strong> Success should not be measured purely by general post counts. Tracking the fate of <i>banned users</i> (attrition of bad actors) is crucial for assessing true behavioral change.
+                        </p>
+                        <span class="block mt-3 text-xs font-mono text-blue-600">Source: Reddit Analysis Methodology</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Application Section -->
+            <section>
+                <h2 class="section-header text-2xl mb-8">II. Application to Project Plan (Actionable Steps)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Application 1 (Linked to A) -->
+                    <div id="application-1" class="card bg-yellow-50 p-6 rounded-xl border-l-8 border-yellow-500">
+                        <div class="text-yellow-700 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-2"><path d="M14 19.5c0-1-1.5-3-4-3s-4 2-4 3"/><path d="M12 2c-3.37 0-6 2-6 6v3c0 2 2 4 6 4s6-2 6-4V8c0-4-2.6-6-6-6z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-yellow-800">1. Focus on User Attrition & Behavioral Changes</h3>
+                        <p class="text-sm text-yellow-700">
+                            <strong><u>Methodology</u></strong> Track the percentage of <strong><u>targeted accounts</u></strong> that become permanently inactive or deleted following a ban, rather than relying only on post volume reduction.
+                        </p>
+                    </div>
+
+                    <!-- Application 2 (Linked to D) -->
+                    <div id="application-2" class="card bg-purple-50 p-6 rounded-xl border-l-8 border-purple-500">
+                        <div class="text-purple-700 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compare"><path d="M7 19.5v-15A2.5 2.5 0 0 1 9.5 2h5A2.5 2.5 0 0 1 17 4.5v15"/><path d="M7 15h10"/><path d="M7 11h10"/><path d="M7 7h10"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-purple-800">2. Target Policy Comparison (Reddit vs. X/Twitter)</h3>
+                        <p class="text-sm text-purple-700">
+                            <strong><u>Data Set</u></strong> Select two platforms with divergent business models (e.g., Reddit and X/Twitter) to compare how similar policies yield different results based on their respective core structures.
+                        </p>
+                    </div>
+
+                    <!-- Application 3 (Linked to C) -->
+                    <div id="application-3" class="card bg-red-50 p-6 rounded-xl border-l-8 border-red-500">
+                        <div class="text-red-700 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-red-800">3. Utilize Advanced Textual Metrics</h3>
+                        <p class="text-sm text-red-700">
+                            <strong><u>Quantification</u></strong> Incorporate <strong><u>contextual analysis</u></strong> or sophisticated NLP models to move beyond simple word-matching and effectively detect implicit, sarcastic, or nuanced forms of hate speech.
+                        </p>
+                    </div>
+
+                    <!-- Application 4 (Linked to B) -->
+                    <div id="application-4" class="card bg-blue-50 p-6 rounded-xl border-l-8 border-blue-500">
+                        <div class="text-blue-700 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-blue-800">4. Establish Concrete "Before/After" Timeline</h3>
+                        <p class="text-sm text-blue-700">
+                            <strong><u>Analysis</u></strong> Select a specific, dated policy change. Collect and compare data for equal <strong><u>pre-period (e.g., 6 months)</u></strong> and <strong><u>post-period</u></strong> timeframes to strengthen causal inference and properly analyze shifts in hate speech levels.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion/Clarity -->
+            <footer class="mt-16 text-center text-gray-500">
+                <p class="font-bold text-lg">III. Clarity of Ideas </p>
+                <p>The project plan is directly informed by the key discussion takeaways, ensuring the methodology is robust and addresses the documented limitations of current policy effectiveness measurement.</p>
+            </footer>
+
+        </main>
+    </div>
+</body>
+</html>
